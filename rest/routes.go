@@ -10,7 +10,7 @@ type Route struct {
 
 type Routes []Route
 
-var routes = Routes{
+var routes = Routes {
     Route{
         "GET", "/hello", Hello,
     },

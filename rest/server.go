@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-    server := &http.Server{
+    server := &http.Server {
         Addr:           ":8000",
         Handler:        NewRouter(),
         ReadTimeout:    10 * time.Second,
