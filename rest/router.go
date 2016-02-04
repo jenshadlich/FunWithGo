@@ -8,7 +8,7 @@ func NewRouter() *mux.Router {
     router := mux.NewRouter().StrictSlash(true)
 
     for _, route := range routes {
-        handler := route.HandlerFunc
+        handler := RequestLogger(route.HandlerFunc)
         router.Methods(route.Method).Path(route.Pattern).Handler(handler)
     }
 
