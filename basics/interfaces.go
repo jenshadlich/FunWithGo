@@ -7,14 +7,23 @@ import "fmt"
 type Integer int32
 type Long int64
 
-type Calculator interface {
-    Calculate()
+type GenericCollection interface {
+    Something()
 }
 
-func (i Integer) Calculate() {}
-func (l Long) Calculate() {}
+func (i Integer) Something() {
+    fmt.Println("Integer = ", i)
+}
+
+func (l Long) Something() {
+    fmt.Println("Long = ", l)
+}
 
 func main() {
-    collection := [] Calculator{ Integer(1), Long(2) }
+    collection := [] GenericCollection{Integer(1), Long(2) }
     fmt.Println(collection)
+
+    for _, element := range collection {
+        element.Something()
+    }
 }
